@@ -4,6 +4,15 @@
 
 #include <uv.h>
 #include "queue.h"
+#include "http-parser/http_parser.h"
+
+#define PT_MAX_NAME_LEN 1024
+#define PT_MAX_HOST_LEN 128
+#define PT_MAX_URL_LEN 1024
+#define PT_MAX_HTTP_FIELD_LEN 56
+#define PT_MAX_HTTP_VALUE_LEN 1024
+#define MAX_REQUEST_HEADER_LEN 2048
+#define MAX_RESPONSE_HEADER_LEN 2048
 
 typedef struct pt_http_connection pt_http_connection;
 
