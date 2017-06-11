@@ -1,13 +1,18 @@
 #include "task/pt_task_manager.h"
+#include "dispatch/pt_dispatcher.h"
+#include "cache/pt_icache_struct.h"
 
 typedef struct pt_task {
-    enum pt_task_state state;
-    char url;
-    char file_path;
+    char *url;
+    char *file_path;
+    pt_dispatcher *dispatcher;
+    pt_idata_cache *cache;
+
 } pt_task;
 
 pt_task* pt_create_task(uv_loop_t *loop, const char *url, const char *full_path) {
     pt_task *task = malloc(sizeof(pt_task));
+    
     return task;
 }
 
